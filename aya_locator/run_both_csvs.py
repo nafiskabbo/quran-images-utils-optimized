@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 # Run aya_locator on both main (original) and prepared (cropped) images
-# to generate data_main.csv and data_prepared.csv.
-# Uses templates from this folder (template_1.jpg, template_2.jpg).
+# to generate data_main.csv and data_prepared.csv for comparison.
 #
 # Setup:
 #   1. Put original page images in aya_locator/images_main/ (001.jpg .. 604.jpg)
 #   2. Put prepared page images in aya_locator/images_prepared/
 #      (e.g. symlink: ln -s ../image_prepare/output images_prepared)
-#   3. For a different mushaf, create templates first:
-#      python extract_templates.py images_prepared/001.jpg --template 1
-#      python extract_templates.py images_prepared/010.jpg --template 2
 # Then run: python run_both_csvs.py
 
 import os

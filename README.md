@@ -11,7 +11,7 @@
 
 1. Use `image_downloader/download_pages.py` to download Quran pages images from sources like [KFGQPC website][1]: [Hafs][2] or [other recitations][3].
 2. Use `image_prepare/prepare_imgs.py` to process & prepare of the original Quran pages images for example crop, resize, optimize, etc.
-3. Use `aya_locator/aya_locator.py` to detect the ayas locations in the Quran pages images and generate a CSV file of those data. **Using a different mushaf?** Create templates from your images with `aya_locator/extract_templates.py` (see `aya_locator/README.md`), then run the locator on your main images so the CSV coordinates match your app’s images for highlighting. If you use main (original) images you can also run `aya_locator/run_both_csvs.py` to get `data_main.csv` and `data_prepared.csv` for comparison.
+3. Use `aya_locator/aya_locator.py` to detect ayah locations in the Quran page images and generate a CSV file. The locator now learns marker shapes from the images you pass in, so the recommended flow is to run it on your main images and use the generated CSV directly for highlighting in your app. If you want to compare original vs prepared coordinates, run `aya_locator/run_both_csvs.py` to generate `data_main.csv` and `data_prepared.csv`.
 4. Finally, you can use `csv_to_sqlite_db/csv_to_sqlite.py` to convert the CSV data to a SQLite DB.
 
 [1]: https://qurancomplex.gov.sa/
